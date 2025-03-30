@@ -1,0 +1,142 @@
+.slider {
+  display: flex;
+  font-size: max(1vh, 12px);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.nav {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  height: 80px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+.nav img {
+  width: 200px;
+}
+.nav .links {
+  padding-top: 30px;
+  display: flex;
+}
+
+.nav .links ul {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  list-style: none;
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tail {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+}
+.tail img {
+  width: 25px;
+}
+.bottom {
+  font-family: Arial;
+  font-size: 12px;
+  padding-left: 100px;
+  align-items: center;
+  display: flex;
+  height: 40px;
+  background-color: rgb(239, 239, 239);
+  justify-content: left;
+}
+.bottom img {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+}
+.bottom a {
+  color: black;
+  margin-left: 15px;
+}
+.bottom p {
+  padding-top: 17px;
+}
+@media (max-width: 1300px) {
+  .nav .links {
+    display: none;
+  }
+}
+.bag-icon {
+  position: absolute;
+}
+.count {
+  margin-right: 10px;
+  z-index: -10;
+  padding-left: 4px;
+  padding-bottom: 13px;
+  display: block;
+  position: relative;
+  background-color: tomato;
+  border-radius: 30px;
+  width: 13px;
+  height: 11px;
+  top: -4px;
+  left: 14px;
+  font-size: 8px;
+  font-weight: 200px;
+  color: white;
+}
+.count-0 {
+  margin-right: 10px;
+  z-index: -10;
+  padding-left: 4px;
+  padding-bottom: 13px;
+  display: block;
+  position: relative;
+  /* background-color: transparent; */
+  border-radius: 30px;
+  width: 13px;
+  height: 11px;
+  top: -4px;
+  left: 14px;
+  font-size: 8px;
+  font-weight: 200px;
+  color: white;
+}
+.active {
+  border-bottom: 2px solid rgb(243, 116, 70);
+}
+.user {
+  position: relative;
+}
+.popup:hover .popup {
+  display: block;
+  transition: 1s;
+}
+.popup {
+  display: none;
+  position: absolute;
+  top: 22px;
+  left: -10px;
+}
+
+.user:hover .popup {
+  display: block;
+}
+.popup p {
+  border: 1px solid gray;
+  margin: 0px;
+  border-radius: 3px;
+}

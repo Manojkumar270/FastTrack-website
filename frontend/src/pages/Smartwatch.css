@@ -1,0 +1,59 @@
+.smart-watch-container header span {
+  color: rgb(170, 169, 169);
+}
+.smart-watch-container header p {
+  padding-top: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 12px;
+  font-weight: 200;
+}
+.smart-watch-container .items {
+  align-items: center;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(223, 221, 221);
+  border-bottom: 1px solid rgb(223, 221, 221);
+  width: 85%;
+  margin-left: 100px;
+}
+.smart-watch-container .items p {
+  font-size: 25px;
+  font-weight: 200;
+}
+.smart-watch-container .drop-container {
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 100%;
+}
+.smart-watch-body {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.smart-watch-body .card {
+  border-radius: 5px;
+  width: 100%;
+  border-bottom: 1px solid rgb(220, 219, 219);
+  margin-bottom: 30px;
+}
+.drop-container button {
+  width: 130px;
+  height: 35px;
+  margin-top: 20px;
+  border: 1px solid rgb(198, 196, 196);
+  background-color: white;
+  margin-right: 0px;
+  font-size: 14px;
+  font-weight: 200;
+}
+.smart-watch-container .drop {
+  border-radius: 5px;
+  width: 250px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid rgb(198, 196, 196);
+}
+.smart-watch-body img {
+  border-bottom: 1px solid rgb(198, 196, 196);
+}

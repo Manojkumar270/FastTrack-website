@@ -1,0 +1,107 @@
+.head {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  height: 100px;
+  background-color: #f8f8f8;
+  padding: 30px 90px;
+}
+.head div {
+  display: flex;
+  max-height: 45px;
+  min-width: 40;
+}
+.head div p {
+  margin-top: 20px;
+  max-width: 160px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  font-size: max(1.2vw);
+  text-wrap: wrap;
+}
+.head .logo {
+  width: 45px;
+}
+.body {
+  font-family: "Red Hat Display", sans-serif;
+  margin: 0px;
+  padding-left: 10vw;
+  padding-top: 80px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.body .logo {
+  margin-top: 20px;
+  margin-bottom: 80px;
+  width: 300px;
+  z-index: 1000;
+}
+.body li {
+  list-style: none;
+  padding-right: 30px;
+}
+.img-container1 {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+}
+.img-container1 img {
+  width: 25px;
+}
+.img-container1 .fb {
+  width: 15px;
+}
+.body p {
+  font-size: 17px;
+  font-weight: 300;
+}
+.body li {
+  font-size: 14px;
+  font-weight: 100;
+  margin-bottom: 15px;
+}
+.apps img {
+  margin-right: 10px;
+}
+
+.terms {
+  padding-top: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background: #151515;
+  color: white;
+  font-size: 16px;
+  font-weight: 100;
+}
+.footer-tail {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 25px;
+  background-color: black;
+  min-height: 90px;
+}
+.footer-tail .start img {
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+.footer-tail .start {
+  padding-left: 12vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-tail p {
+  padding-top: 10px;
+  align-self: center;
+  margin-left: 14vh;
+  color: gray;
+  font-size: 12px;
+}

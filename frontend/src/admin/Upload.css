@@ -1,0 +1,29 @@
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+form input,
+form textarea,
+form button {
+  padding-left: 10px;
+  margin-bottom: 20px;
+  width: 500px;
+}
+form input {
+  height: 40px;
+}
+form textarea {
+  height: 100px;
+}
+form button {
+  width: 200px;
+  border: none;
+  background-color: rgb(240, 102, 51);
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+}
+h1 {
+  color: rgb(247, 85, 26);
+}

@@ -1,0 +1,69 @@
+.watch-container1 {
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 100%;
+  display: block;
+  z-index: 2000;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+.watch-container1 header {
+  margin-bottom: 60px;
+  font-size: 12px;
+  font-weight: 200;
+}
+.watch-container1 header span {
+  color: rgb(170, 169, 169);
+}
+.watch-container1 header .items {
+  padding-top: 10px;
+  align-items: center;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(223, 221, 221);
+  border-bottom: 1px solid rgb(223, 221, 221);
+  width: 100%;
+  font-size: 25px;
+  font-weight: 200;
+}
+.watch-container1 .drop {
+  border-radius: 5px;
+  width: 250px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid rgb(198, 196, 196);
+}
+.drop-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.drop-container a {
+  font-size: 14px;
+  font-weight: 200;
+}
+.drop-container button {
+  width: 130px;
+  height: 35px;
+  margin-top: 20px;
+  border: 1px solid rgb(198, 196, 196);
+  background-color: white;
+  margin-right: 0px;
+  font-size: 14px;
+  font-weight: 200;
+}
+.drop-menu {
+  width: 250px;
+}
+.watch-body .card {
+  width: 100%;
+  margin-bottom: 60px;
+  border-radius: 5px;
+}
+
+.watch-body .card img {
+  border-radius: 5px;
+  width: 100%;
+  border-bottom: 1px solid rgb(220, 219, 219);
+}

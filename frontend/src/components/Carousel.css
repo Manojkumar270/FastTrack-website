@@ -1,0 +1,9 @@
+.carousel-indicators .btn1 {
+  width: 8px;
+  height: 8px;
+  margin: 6px;
+  border-radius: 50%;
+}
+.active {
+  border: none;
+}

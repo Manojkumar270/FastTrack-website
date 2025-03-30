@@ -1,0 +1,101 @@
+.img-container img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.img-container div {
+  width: 850px;
+  height: 100%;
+  margin: 5px;
+}
+.img-container {
+  padding-left: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.img-container .last {
+  position: relative;
+  right: 10vw;
+  top: 10vw;
+  height: 60px;
+  transform: rotate(-90deg);
+}
+.last p {
+  margin-top: 90px;
+  padding-left: 0px;
+  display: inline;
+  font-weight: 800;
+  font-size: 4vw;
+}
+.offer-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  margin-top: 60px;
+  width: 100%;
+  border-radius: 30px;
+}
+.offer-banner img {
+  width: 85%;
+  border-radius: 10px;
+  height: 80px;
+  margin-bottom: 60px;
+}
+.text-banner {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 45px;
+  overflow-wrap: initial;
+}
+.text-banner p {
+  width: 100%;
+  animation: marquee 5s linear infinite;
+}
+/* @keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+} */
+.trend-text {
+  font-size: 25px;
+  font-weight: 300;
+  margin-left: 8vw;
+}
+
+.span1 {
+  margin-left: 6px;
+  color: rgb(184, 182, 182);
+  font-weight: 200;
+  text-decoration: line-through;
+}
+.span2 {
+  margin-left: 10px;
+  color: tomato;
+  font-size: 18px;
+}
+.row {
+  width: 100%;
+}
+.styles {
+  margin-left: 6vw;
+  margin-right: 4vw;
+}
+.styles img {
+  width: 380px;
+  border-radius: 10px;
+}
+.vibe {
+  margin-top: 60px;
+  margin-left: 90px;
+}

@@ -1,0 +1,20 @@
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+form input,
+form textarea,
+form button {
+  margin-bottom: 20px;
+  width: 500px;
+}
+form input {
+  height: 40px;
+}
+form textarea {
+  height: 100px;
+}
+form button {
+  width: 200px;
+}
