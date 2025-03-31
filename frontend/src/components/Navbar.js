@@ -31,7 +31,7 @@ const Navbar = () => {
             <Link to="/watch">
               <li
                 onClick={() => setMenu("watch")}
-                className={menu === "watch" ? "active" : ""}
+                className={menu === "watch" ? "active1" : ""}
               >
                 WATCHES
               </li>
@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link to="/smartwatches">
               <li
                 onClick={() => setMenu("smartwatch")}
-                className={menu === "smartwatch" ? "active" : ""}
+                className={menu === "smartwatch" ? "active1" : ""}
               >
                 SMART WATCHES
               </li>
@@ -47,7 +47,7 @@ const Navbar = () => {
             <Link to="/gift">
               <li
                 onClick={() => setMenu("gift")}
-                className={menu === "gift" ? "active" : ""}
+                className={menu === "gift" ? "active1" : ""}
               >
                 GIFTING
               </li>
@@ -56,7 +56,7 @@ const Navbar = () => {
             <Link to="accessories">
               <li
                 onClick={() => setMenu("accessories")}
-                className={menu === "accessories" ? "active" : ""}
+                className={menu === "accessories" ? "active1" : ""}
               >
                 ACCESSORIES
               </li>
@@ -72,18 +72,19 @@ const Navbar = () => {
           <i>
             <img src={search} alt="" />
           </i>
-          <Link to="/upload">
-            <i class="user">
-              {" "}
-              <img src={user} alt="" />
-              <div class="popup">
-                <p>admin</p>
-                <Link to="/form">
-                  <p>User</p>
-                </Link>
-              </div>
-            </i>
-          </Link>
+
+          <i class="user">
+            {" "}
+            <img src={user} alt="" />
+            <div class="popup">
+              <Link to="/upload">
+                <p>Admin</p>
+              </Link>
+              <Link to="/form">
+                <p>User</p>
+              </Link>
+            </div>
+          </i>
 
           <i>
             <img src={like} alt="" />
@@ -108,7 +109,8 @@ const Navbar = () => {
       <section class="bottom">
         <img src={location} alt="" />
         <p>Select a location to check product availability</p>
-        <a href="">Add Location</a>
+
+        <p class="location">Add Location</p>
       </section>
     </>
   );

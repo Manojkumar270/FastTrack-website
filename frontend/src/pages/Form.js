@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { register } from "./auth";
+import "./Form.css";
 
 const Form = () => {
   const [form, setForm] = useState({
@@ -74,37 +75,46 @@ const Form = () => {
   };
   return (
     <>
-      <h1>FORM</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input
-          type="text"
-          name="username"
-          value={form.username}
-          onChange={handleChange}
-        />
-        {error.username && <p>{error.username}</p>}
+      <div class="register-container">
+        <h1>Register</h1>
         <br />
-        <label>Email</label>
-        <input
-          type="text"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-        />
-        {error.email && <p>{error.email}</p>}
-        <br />
-        <label>Password</label>
-        <input
-          type="text"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-        />
-        {error.password && <p>{error.password}</p>}
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+        <form class="register-form" onSubmit={handleSubmit}>
+          <label>Username</label>
+
+          <input
+            type="text"
+            name="username"
+            value={form.username}
+            onChange={handleChange}
+          />
+          {error.username && <p class="error">{error.username}</p>}
+
+          <label>Email</label>
+
+          <input
+            type="text"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+          />
+          {error.email && <p class="error">{error.email}</p>}
+
+          <label>Password</label>
+
+          <input
+            type="text"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+          />
+          {error.password && <p class="error">{error.password}</p>}
+
+          <button type="submit">Submit</button>
+          <p>
+            Don't have an account <a href="/login">login</a>
+          </p>
+        </form>
+      </div>
     </>
   );
 };

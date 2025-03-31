@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import smartWatches from "../products/Smartwatches";
 import banner from "../images/sw-banner.webp";
 import "./Smartwatch.css";
@@ -27,7 +27,7 @@ const Smartwatch = () => {
   // }, []);
 
   return (
-    <>
+    <div>
       <section class="smart-watch-container">
         <header>
           <p>
@@ -36,7 +36,7 @@ const Smartwatch = () => {
           </p>
           <div>
             {" "}
-            <img src={banner} class="img-fluid " />
+            <img alt="" src={banner} class="img-fluid " />
           </div>
 
           <br />
@@ -51,8 +51,8 @@ const Smartwatch = () => {
             <div class="dropdown">
               <a
                 class="drop btn btn-light dropdown-toggle"
-                href="#"
                 role="button"
+                href="a"
                 id="dropdownMenuLink"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -62,37 +62,41 @@ const Smartwatch = () => {
 
               <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                 <li class="drop-menu">
-                  <a class="dropdown-item drop-menu" href="#">
+                  <a class="dropdown-item drop-menu" href="a">
                     New Arrivals
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="a">
                     Best Sellers
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="a">
                     Popularity
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="a">
                     Discount
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="a">
                     Price : High to Low
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="a">
                     Price :Low to High
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a
+                    class="dropdown-item"
+                    href="a
+                  "
+                  >
                     Fastrack Recommends
                   </a>
                 </li>
@@ -141,7 +145,7 @@ const Smartwatch = () => {
             ))}
         </section>
       </section>
-    </>
+    </div>
   );
 };
 

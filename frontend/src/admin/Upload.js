@@ -2,7 +2,6 @@ import React from "react";
 import "./Upload.css";
 
 import { toast, ToastContainer } from "react-toastify";
-import { Link } from "react-router-dom";
 
 const Upload = () => {
   const handleSubmit = (event) => {
@@ -16,7 +15,7 @@ const Upload = () => {
     if (name === "" || img === "" || price === "" || des === "") {
       toast.warn("fill the required fields");
     } else {
-      const watchObj = { name, img, des, price, img };
+      const watchObj = { name, img, des, price };
       console.log(watchObj);
 
       fetch("http://localhost:5001/upload", {
@@ -56,11 +55,8 @@ const Upload = () => {
             <label>
               <b>Image</b>
             </label>
-            <input type="text" name="img" />
+            <input placeholder="image URL" type="text" name="img" />
             <button type="submit">UPLOAD</button>
-            {/* <Link to="/update">
-              <button>UPDATE</button>
-            </Link> */}
           </form>
         </section>
       </div>

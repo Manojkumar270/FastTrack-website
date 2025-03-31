@@ -66,9 +66,9 @@
   width: 20px;
   height: 20px;
 }
-.bottom a {
-  color: black;
+.bottom .location {
   margin-left: 15px;
+  text-decoration: underline;
 }
 .bottom p {
   padding-top: 17px;
@@ -115,7 +115,7 @@
   font-weight: 200px;
   color: white;
 }
-.active {
+.active1 {
   border-bottom: 2px solid rgb(243, 116, 70);
 }
 .user {
@@ -128,15 +128,19 @@
 .popup {
   display: none;
   position: absolute;
-  top: 22px;
-  left: -10px;
+  top: 25px;
+  left: 8px;
 }
 
 .user:hover .popup {
   display: block;
 }
 .popup p {
-  border: 1px solid gray;
+  color: rgb(243, 116, 70);
+  border: 1px solid rgb(243, 116, 70);
+  padding: 4px;
   margin: 0px;
+  height: 30px;
   border-radius: 3px;
+  margin-bottom: 2px;
 }

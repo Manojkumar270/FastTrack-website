@@ -98,7 +98,7 @@ async function run() {
         password: hashedPassword,
       });
       console.log("user registered", username);
-      res.status(201).json({ success: true });
+      res.status(201).json({ success: true, result });
     });
 
     app.post("/login", async (req, res) => {

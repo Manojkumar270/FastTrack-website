@@ -1,17 +1,17 @@
-.register-form {
+.login-form {
   width: 350px;
   display: grid;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.register-form input {
+.login-form input {
   width: 300px;
   height: 30px;
-  border-radius: 6px;
   border: 1px solid gray;
+  border-radius: 6px;
 }
-.register-container {
+.login-container {
   margin-top: 100px;
   margin-bottom: 100px;
   align-self: center;
@@ -23,7 +23,4 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 15px;
-}
-.register-form .error {
-  color: red;
 }
