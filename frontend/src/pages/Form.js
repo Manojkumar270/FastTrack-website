@@ -21,13 +21,10 @@ const Form = () => {
       else {
         if (form.password.length < 6)
           newError.password = "password must be in less than 6 characters";
-
         if (!/[A-Z]/.test(form.password))
           newError.password = "must contain one Uppercase";
-
         if (!/[a-z]/.test(form.password))
           newError.password = "must contain one Lowercase";
-
         if (!/[!@#$%&*?]/.test(form.password)) {
           newError.password = "must contain one special character";
         }
