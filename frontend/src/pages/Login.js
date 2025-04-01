@@ -10,12 +10,12 @@ const Login = () => {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    console.log(username, password);
     try {
       const token = await login(username, password);
       console.log("login successfull");
       console.log("Token : ", token);
       alert("login successfull");
+      localStorage.setItem("token", token);
       setError("");
       window.location.href = "/";
     } catch (error) {
