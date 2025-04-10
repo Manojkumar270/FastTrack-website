@@ -58,7 +58,6 @@ const Update = () => {
             <tr key={item._id}>
               <td>1</td>
               <td>{item._id}</td>
-
               <td>
                 <img class="img-fluid image" src={item.img} />
               </td>
