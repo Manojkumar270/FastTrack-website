@@ -8,32 +8,38 @@ const Upload = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const img = form.img.value;
+    const img = form.image.files[0];
     const price = form.price.value;
     const des = form.des.value;
 
-    if (name === "" || img === "" || price === "" || des === "") {
-      toast.warn("fill the required fields");
-    } else {
-      const watchObj = { name, img, des, price };
-      console.log(watchObj);
-
-      fetch("http://localhost:5001/upload", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(watchObj),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          toast.success("Data added successfully");
-          form.reset();
-          console.log(data);
-          window.location.href = "/update";
-        });
+    if (name === "" || !img || price === "" || des === "") {
+      toast.warn("Fill the required fields");
+      return;
     }
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("price", price);
+    formData.append("des", des);
+    formData.append("image", img); 
+
+    fetch("http://localhost:5001/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Data added successfully");
+        form.reset();
+        console.log(data);
+        window.location.href = "/update";
+      })
+      .catch((err) => {
+        toast.error("Something went wrong");
+        console.error(err);
+      });
   };
+
   return (
     <>
       <div class="upload-container">
@@ -55,7 +61,7 @@ const Upload = () => {
             <label>
               <b>Image</b>
             </label>
-            <input placeholder="image URL" type="text" name="img" />
+            <input type="file" name="image" />
             <button type="submit">UPLOAD</button>
           </form>
         </section>

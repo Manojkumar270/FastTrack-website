@@ -5,10 +5,13 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
+const multer = require("multer");
+const fs = require("fs");
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
+app.use("/uploads", express.static("uploads"));
 
 const secretKey = "yours-secret-key";
 
@@ -35,9 +38,23 @@ async function run() {
 
     const watchcollections = client.db("watchdata").collection("watches");
 
-    app.post("/upload", async (req, res) => {
+    const storage = multer.diskStorage({
+      destination: (req, file, cb) => {
+        cb(null, "./uploads");
+      },
+      filename: (req, file, cb) => {
+        cb(null, file.originalname);
+      },
+    });
+
+    const upload = multer({ storage: storage });
+
+    app.post("/upload", upload.single("image"), async (req, res) => {
       const data = req.body;
-      const result = await watchcollections.insertOne(data);
+      const file = req.file.filename;
+      const all = { ...data, file };
+      console.log(file);
+      const result = await watchcollections.insertOne(all);
       res.send(result);
     });
 
@@ -76,7 +93,9 @@ async function run() {
       try {
         const id = req.params.id;
         const filter = { _id: new ObjectId(id) };
-        const result = await watchcollections.deleteOne(filter);
+        const item=await watchcollections.findOne(filter)
+        fs.unlink(`uploads/${item.file}`, () => {});
+        const result = await watchcollections.deleteOne(item);
         res.status(200).json({
           success: true,
           message: "data deleted successfully",
@@ -109,7 +128,9 @@ async function run() {
       if (user) {
         const ispasswordValid = await bcrypt.compare(password, user.password);
         if (ispasswordValid) {
-          const token = jwt.sign({ username }, secretKey, { expiresIn: "1h" });
+          const token = await jwt.sign({ username }, secretKey, {
+            expiresIn: "1h",
+          });
           res.json({ token });
         } else {
           console.log("invalid password for the user", username);

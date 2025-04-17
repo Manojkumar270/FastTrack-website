@@ -59,7 +59,11 @@ const Update = () => {
               <td>1</td>
               <td>{item._id}</td>
               <td>
-                <img class="img-fluid image" src={item.img} />
+                <img
+                  className="img-fluid image"
+                  src={`http://localhost:5001/uploads/${item.file}`}
+                  alt="watch"
+                />
               </td>
               <td>{item.name}</td>
               <td>{item.des}</td>

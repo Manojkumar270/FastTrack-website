@@ -19,7 +19,7 @@ export const login = async (username, password) => {
       username,
       password,
     });
-    const token = response.data.token;
+    const token =await response.data.token;
     return token;
   } catch (error) {
     console.log(
