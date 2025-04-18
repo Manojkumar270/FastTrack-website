@@ -58,6 +58,17 @@ async function run() {
       res.send(result);
     });
 
+    app.post("/uploadss", upload.array("images", 10), async (req, res) => {
+      const files = req.files.map((file) => file.filename);
+      const data = req.body;
+      const all = {
+        ...data,
+        images: files,
+      };
+      const result = await watchcollections.insertOne(all);
+      res.send(result);
+    });
+
     app.get("/watches", async (req, res) => {
       const watchess = watchcollections.find();
       const result = await watchess.toArray();
@@ -93,7 +104,7 @@ async function run() {
       try {
         const id = req.params.id;
         const filter = { _id: new ObjectId(id) };
-        const item=await watchcollections.findOne(filter)
+        const item = await watchcollections.findOne(filter);
         fs.unlink(`uploads/${item.file}`, () => {});
         const result = await watchcollections.deleteOne(item);
         res.status(200).json({
@@ -139,6 +150,12 @@ async function run() {
       } else {
         console.log("user not found : ", username);
         res.status(401).json({ message: "Invalid credentials" });
+      }
+    });
+
+    app.use((err, req, res, next) => {
+      if (err) {
+        res.status(400).json({ error: err });
       }
     });
 

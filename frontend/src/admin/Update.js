@@ -61,7 +61,7 @@ const Update = () => {
               <td>
                 <img
                   className="img-fluid image"
-                  src={`http://localhost:5001/uploads/${item.file}`}
+                  src={`http://localhost:5001/uploads/${item.images[0]}`}
                   alt="watch"
                 />
               </td>

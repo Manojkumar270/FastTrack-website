@@ -8,7 +8,7 @@ const Upload = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const img = form.image.files[0];
+    const img = Array.from(form.images.files);
     const price = form.price.value;
     const des = form.des.value;
 
@@ -21,9 +21,11 @@ const Upload = () => {
     formData.append("name", name);
     formData.append("price", price);
     formData.append("des", des);
-    formData.append("image", img); 
+    img.forEach((item) => {
+      formData.append("images", item);
+    });
 
-    fetch("http://localhost:5001/upload", {
+    fetch("http://localhost:5001/uploadss", {
       method: "POST",
       body: formData,
     })
@@ -61,7 +63,7 @@ const Upload = () => {
             <label>
               <b>Image</b>
             </label>
-            <input type="file" name="image" />
+            <input type="file" name="images" multiple/>
             <button type="submit">UPLOAD</button>
           </form>
         </section>
