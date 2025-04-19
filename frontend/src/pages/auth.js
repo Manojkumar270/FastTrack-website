@@ -1,9 +1,9 @@
 import axios from "axios";
-const API_URL = "http://localhost:5001";
+const API_URL = "http://localhost:8888";
 
 export const register = async (username, password, email) => {
   try {
-    await axios.post(`${API_URL}/register`, { username, password, email });
+   return await axios.post(`${API_URL}/register`, { username, password, email });
   } catch (error) {
     console.log(
       "error during registration",

@@ -49,12 +49,18 @@ const Form = () => {
       console.log(Object.keys(validationError));
 
       try {
-        await register(form.username, form.password, form.email);
-        alert("Registration successful");
-        console.log("Registration successful");
-        window.location.href = "/login";
+        const response = await register(
+          form.username,
+          form.password,
+          form.email
+        );
+        if (response.data.success) {
+          alert(response.data.message);
+          window.location.href = "/login";
+        } else {
+          alert(response.data.message);
+        }
       } catch (error) {
-        console.log("Registration failed");
         alert("Registration failed");
       }
     } else {

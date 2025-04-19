@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 5001;
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
 const fs = require("fs");
+const path = require("path");
+const Mail = require("./mail");
+require("dotenv").config();
+const PORT = process.env.PORT || 7777;
 
 app.use(cors());
 app.use(express.json());
@@ -20,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
+const { send } = require("process");
 const uri =
   "mongodb+srv://manojkumarp2705:12345@cluster0.nlcpq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
@@ -121,14 +125,31 @@ async function run() {
 
     app.post("/register", async (req, res) => {
       const { username, password, email } = req.body;
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const result = await users.insertOne({
-        username,
-        email,
-        password: hashedPassword,
-      });
-      console.log("user registered", username);
-      res.status(201).json({ success: true, result });
+
+      const isexistingUSer = await users.findOne({ email: email });
+      if (isexistingUSer) {
+        res.json({ success: false, message: "user Already exist" });
+      } else {
+        const hashedPassword = await bcrypt.hash(password, 10);
+        await users.insertOne({
+          username,
+          email,
+          password: hashedPassword,
+        });
+        const mail = new Mail();
+        let template = fs.readFileSync(
+          path.join(__dirname, "mail.html"),
+          "utf8"
+        );
+        let html = template.replace("[name]", username);
+        mail.setTo(email);
+        mail.setHtml(html);
+        mail.setSubject();
+        mail.send();
+        res
+          .status(201)
+          .json({ success: true, message: "Registered successfully" });
+      }
     });
 
     app.post("/login", async (req, res) => {
@@ -170,6 +191,6 @@ async function run() {
   }
 }
 run().catch(console.dir);
-app.listen(port, () => {
-  console.log(`connected to port : http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`connected to port : http://localhost:${PORT}`);
 });
